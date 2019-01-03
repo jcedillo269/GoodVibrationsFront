@@ -3,7 +3,9 @@ import ReactAudioPlayer from 'react-audio-player';
 import Form from './Form'
 import Header from './Header'
 import SongList from './SongList.js'
-import Valerie from '../assets/AmyWinehouse-Valerie.mp3'
+import PlaylistContainer from './PlaylistContainer'
+
+
 
 
 export default class Content extends React.Component {
@@ -13,7 +15,6 @@ export default class Content extends React.Component {
     fetch('http://localhost:3000/api/v1/users')
     .then(res => res.json())
     .then(json => {
-      console.log(json);
       this.setState({ users: json })
     })
   }
@@ -35,14 +36,15 @@ export default class Content extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const form = document.getElementById('form')
+    const formCont = document.getElementById('form-cont')
     const user = this.findExistingUser()
     if( user != null){
       this.setState({ currentUser: user}, () => console.log(this.state))
     } else {
       this.handlePostUser()
     }
-      debugger
     form.reset()
+    formCont.style.display = 'none'
   }
 
   handlePostUser = () => {
@@ -65,16 +67,18 @@ export default class Content extends React.Component {
   render() {
     return (
       <>
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Form handleChange={this.handleChange}  handleSubmit={this.handleSubmit}/>
-        <ReactAudioPlayer
-          src={Valerie}
-          autoPlay
-          controls
-        />
-        <SongList />
+        {this.state.usermail !== "" ? <PlaylistContainer handleLikes={this.props.handleLikes} handleDelete={this.props.handleDelete} playlist={this.props.playlist}/> : ""}
+
       </>
   )
     }
 
 }
+
+{/* <ReactAudioPlayer
+  src={Valerie}
+  autoPlay
+  controls
+/> */}

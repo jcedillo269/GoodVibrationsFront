@@ -8,11 +8,13 @@ export default class SongList extends React.Component {
   state = { songs: [Valerie, SinkIntoTheFloor, Reptilia ]}
 
 
-//TODO render proper song title
   render(){
     return this.state.songs.map(song => {
-      console.log(song);
-      return <p></p>
+      return (
+        <div key={song}>
+          <p></p>
+        </div>
+    )
     })
   }
 }

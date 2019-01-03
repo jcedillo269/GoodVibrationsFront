@@ -1,21 +1,59 @@
 body {
-  background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=160')
+  background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=160')
 }
 
 #form {
   background-color:#FFF7E0;
   align-items: center;
+  display: flex;
+ flex-direction: column;
+}
+
+#form-cont {
+  background-color: #f8f3db;
+  width: 35%;
 }
 
 #header {
-  background-color:#EB918B;
+  background-image: url('https://images.unsplash.com/photo-1518600892756-02ed67d750f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80');
+  opacity: 0.8;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
 
+h2 {
+  color:#faf6e5
+}
+
+p {
+  color:#faf6e5
+
+}
+
 h1 {
-  font-family: 'Concert One', sans-serif;
+  font-family: 'ZCOOL XiaoWei', serif;
   text-align: center;
+}
+
+#now_playing {
+    background-color:#d55756;
+    opacity: 0.7;
+    position: relative;
+    bottom: 10px;
+}
+
+#playlist_container {
+  background-color:#faf2f1;
+  border-color: #490004;
+  opacity: 0.6;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  height: 15%;
 }
