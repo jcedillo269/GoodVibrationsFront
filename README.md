@@ -13,7 +13,7 @@ You will also see any lint errors in the console.
 
 GoodVibrations is a React app student project with a Ruby on Rails back-end, that uses the Spotify Web Playback API, to listen to Spotify and create a playlist of all of your favorite music.
 
-##User can:
+## User can:
 -Stream Music via their Spotify account in the application
 -Create and customize playlists.
 
